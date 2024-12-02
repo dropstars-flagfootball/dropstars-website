@@ -10,16 +10,31 @@ const imageURL = "field.jpg";
 const bgStyle = { backgroundImage: `url('/images/${imageURL}')` };
 const content = [
   {
-    heading: "Mailing Address",
-    info: "123 Anywhere St, Any City, ST 34565",
+    heading: "E-Mail",
+    data: [{
+      text: "info@dropstars.at",
+      link: 'mailto:info@dropstars.at',
+    }]
   },
   {
-    heading: "Email Address",
-    info: "hello@reallygreatsite.com",
+    heading: "Telefon",
+    data: [{
+      text: "+43 660 32 174 30",
+      link: 'tel:+436603217430',
+    }]
   },
   {
-    heading: "Phone Number",
-    info: "(123) 456-7890",
+    heading: "Links",
+    data: [{
+      text: "Impressum",
+      link: '/impressum',
+    }, {
+      text: "Instagram",
+      link: 'https://www.instagram.com/dropstars_innsbruck',
+    }, {
+      text: "Facebook",
+      link: 'https://www.facebook.com/dropstarsinnsbruck',
+    }]
   },
 ];
 ---
@@ -30,16 +45,18 @@ const content = [
 >
   <div class="mx-auto container">
     <h1
-      class="text-5xl blueText uppercase italic px-4 py-28 md:p-36 max-w-xl"
+      class="text-5xl blueText uppercase italic py-28 md:py-36 w-full text-center"
     >
       <DropstarsText text={callToAction} ></DropstarsText>
     </h1>
-    <div class="bg-white border-2 border-dropstars-red grid grid-cols-1 md:grid-cols-3">
+    <section class="grid grid-cols-1 md:grid-cols-3">
       {
         content.map((item) => (
           <div class="p-12">
-            <h1 class="uppercase text-2xl italic text-dropstars-blue">{item.heading}</h1>
-            <p class="text-dropstars-blue">{item.info}</p>
+            <h1 class="uppercase text-2xl italic text-white">{item.heading}</h1>
+            { item.data.map((element) => (
+              <a href={element.link}><p class="text-white">{element.text}</p></a>
+            ))}
           </div>
         ))
       }
