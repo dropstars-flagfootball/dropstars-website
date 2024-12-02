@@ -1,10 +1,12 @@
 ---
+import DropstarsText from './DropstarsText.astro';
+
 interface Props {
   callToAction: string;
 }
 
 const { callToAction } = Astro.props;
-const imageURL = "gym-ropes.jpg";
+const imageURL = "field.jpg";
 const bgStyle = { backgroundImage: `url('/images/${imageURL}')` };
 const content = [
   {
@@ -23,21 +25,21 @@ const content = [
 ---
 
 <footer
-  class="bg-cover bg-no-repeat bg-gray-700 bg-blend-multiply"
+  class="bg-cover bg-no-repeat bg-gray-700 bg-blend-multiply snap-end bg-bottom md:bg-[center_bottom_-10rem]"
   style={bgStyle}
 >
-  <div class="mx-auto max-w-screen-xl">
+  <div class="mx-auto container">
     <h1
-      class="font-extrabold text-5xl yellowText tracking-wide uppercase italic p-36 max-w-xl"
+      class="text-5xl blueText uppercase italic p-36 max-w-xl"
     >
-      {callToAction}
+      <DropstarsText text={callToAction} ></DropstarsText>
     </h1>
-    <div class="yellowBG grid grid-cols-1 md:grid-cols-3">
+    <div class="bg-white border-2 border-dropstars-red grid grid-cols-1 md:grid-cols-3">
       {
         content.map((item) => (
           <div class="p-12">
-            <h1 class="uppercase text-2xl italic">{item.heading}</h1>
-            <p>{item.info}</p>
+            <h1 class="uppercase text-2xl italic text-dropstars-blue">{item.heading}</h1>
+            <p class="text-dropstars-blue">{item.info}</p>
           </div>
         ))
       }

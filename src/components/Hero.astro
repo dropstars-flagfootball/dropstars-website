@@ -1,28 +1,28 @@
 ---
-interface Props {
-  callToAction: string;
-  buttonText: string;
-  companyName:string;
-  //    logoImage:string;
-}
-const { callToAction, buttonText, companyName } = Astro.props;
+import instagramIcon from '../../public/icons/instagram.svg?raw';
+import facebookIcon from '../../public/icons/facebook.svg?raw';
 
-const imageURL = "hero-fitness-image.jpg"
+const imageURL = "bg.jpg"
 const bgStyle = {
   backgroundImage: `url('/images/${imageURL}')`,
 };
 ---
 
-<header class="bg-cover bg-no-repeat bg-gray-400 bg-blend-multiply" style={bgStyle}>
-  <nav class="text-white uppercase pt-8 p-4 font-bold2">
+<header class="bg-cover bg-no-repeat bg-gray-400 bg-blend-multiply snap-start" style={bgStyle}>
+  <nav class="text-white uppercase pt-8 p-4 font-bold2 container mx-auto top-0 z-10 grid grid-cols-2 ">
     <ul>
-      <li>{companyName}</li>
+      <li>Dropstars</li>
+    </ul>
+    <ul class="text-white flex justify-end gap-4">
+      <li>
+        <a class="text-white block"><div class="w-6" set:html={instagramIcon} /></a>
+      </li>
+      <li>
+        <a class="text-white block"><div class="w-6" set:html={facebookIcon} /></a>
+      </li>
     </ul>
   </nav>
-  <div class="px-4 mx-auto max-w-screen-xl text-center py-36 text-white">
-  
-      <h1 class="font-extrabold text-9xl tracking-wide mb-4 uppercase italic">{callToAction}</h1>
-      <button class="yellowBG p-2 uppercase text-black font-bold">{buttonText}</button>
-
+  <div class="px-4 mx-auto max-w-screen-xl h-lvh text-center py-24 text-white overflow-hidden">
+      <img src="/images/logo.png" alt="Dropstars Logo" class="w-48 mx-auto animate-in fade-in delay-1000 duration-1500"/>
   </div>
 </header>

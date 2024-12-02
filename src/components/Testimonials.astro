@@ -23,14 +23,14 @@ const testimonials = [
   },
 ];
 ---
-<section class="py-12">
-  <h1 class="yellowText text-5xl italic uppercase text-center">Before and After</h1>
+<section class="py-12 snap-center">
+  <h1 class="blueText text-5xl italic uppercase text-center">Before and After</h1>
   <div class="grid grid-cols-1 md:grid-cols-3">
     {
       testimonials.map((profile)=>(
         <div class="m-4">
           <img src={'/images/'+profile.profileURL} alt="Testimonial" class="object-cover w-full h-48"/>
-          <div class="yellowBG p-8">
+          <div class="blueBG p-8">
             <p class="pb-4 font-bold">
               {profile.quote}
               </p>

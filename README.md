@@ -1,12 +1,12 @@
-# Fitness Astro Template
+# Dropstars Website
 
-[Youtube Tutorial - Canva to Astro 4.0: Fitness Website](https://youtube.com/playlist?list=PLP5oBhNCHQF1VsRCSTpug63AYymmEvYpM&si=Y4A9d0PsXsRi-FlQ)
+Website for the Dropstars Flag Football Team
 
-[Live Preview](https://fitness-astro-template.netlify.app/)
+Based on [Astro](https://docs.astro.build).
 
 ## 🚀 Project Structure
 
-Inside of this Fitness Astro Template, you'll see the following folders and files:
+Inside of your Astro project, you'll see the following folders and files:
 
 ```text
 /
@@ -45,4 +45,8 @@ All commands are run from the root of the project, from a terminal:
 | `npm run build`           | Build your production site to `./dist/`          |
 | `npm run preview`         | Preview your build locally, before deploying     |
 | `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |).
+| `npm run astro -- --help` | Get help using the Astro CLI                     |
+
+## 👀 Want to learn more?
+
+Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).

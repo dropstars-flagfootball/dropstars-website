@@ -1,5 +1,6 @@
 ---
 import { Image } from 'astro:assets';
+import DropstarsText from './DropstarsText.astro';
 
 interface Props {
   linkText: string;
@@ -9,25 +10,25 @@ interface Props {
 const { linkText, imageOne, imageTwo } = Astro.props;
 ---
 
-<section class="py-12">
-  <div class="grid grid-cols-2 p-4">
+<section class="py-12 snap-center">
+  <div class="container mx-auto grid grid-cols-1 md:grid-cols-2 p-4 gap-4">
     <div>
-      <h1 class="text-white text-5xl italic max-w-xs yellowText pb-8">About Our Fit Family</h1>
+      <h1 class="text-5xl italic max-w-xs text-white pb-8"><DropstarsText text="FlagFootball made in Innsbruck"></DropstarsText></h1>
       <p class="text-white max-w-sm">
-        Astraeus was founded in 2001 by a husband and wife team, Bobby and Dora Graff. Since then, we have expanded to over 115 locations nationwide!
+        Lorem Ipsum dolor sit amet.  Lorem Ipsum dolor sit amet.  Lorem Ipsum dolor sit amet.  Lorem Ipsum dolor sit amet. Lorem Ipsum dolor sit amet.
       </p>
       <p class="text-white mt-8 underline">
-        <a href={linkText}>Learn more</a>
+        <a href={linkText}>Link Text</a>
       </p>
     </div>
-    <div class="grid grid-cols-2">
+    <div class="grid grid-cols-2 gap-6">
         <Image src={'/images/'+imageOne} 
         width={600} 
-        height={600/1.5} 
-        alt="Gym Instructor" 
-        class="rounded-md object-cover w-48"/>
-        <Image src={'/images/'+imageTwo}
-         width={600} height={600/1.5} alt="Boxing Instructor" class="rounded-md object-cover w-48 pt-8"/>
+        height={600 * 0.8} 
+        alt="" 
+        class="rounded-md object-cover w-64"/>
+    <Image src={'/images/'+imageTwo}
+         width={600} height={600} alt="" class="rounded-md object-cover w-64 pt-8"/>
     </div>
   </div>
 </section>
