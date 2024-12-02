@@ -7,6 +7,9 @@ export default {
 				'dropstars-blue': '#0A234E',
 				'dropstars-red': '#CA3939'
 			},
+			dropShadow: {
+				'dropstar-shadow': ['-6px 4px 0 #0A234E', '-3px 3px 0 #CA3939']
+			}
 		},
 	},
 	plugins: [

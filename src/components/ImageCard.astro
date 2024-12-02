@@ -14,7 +14,7 @@ const imageStyle = {
   class:list={
   [
     {
-       "py-48 bg-cover m-8 bg-gray-700 bg-blend-multiply":true,
+       "group py-48 bg-cover m-8 bg-gray-700 bg-blend-multiply cursor-pointer hover:bg-gray-400 hover:scale-105 transition-all":true,
        'bg-top': backgroundPositionTop,
        'bg-center': !backgroundPositionTop,
      }
@@ -22,5 +22,5 @@ const imageStyle = {
   }
   style={imageStyle}
 >
-  <h2 class="text-white uppercase text-4xl italic">{text}</h2>
+  <h2 class="text-white uppercase text-4xl italic transition-all group-hover:drop-shadow-dropstar-shadow">{text}</h2>
 </div>
