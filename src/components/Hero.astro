@@ -1,6 +1,6 @@
 ---
-import instagramIcon from '../../public/icons/instagram.svg?raw';
-import facebookIcon from '../../public/icons/facebook.svg?raw';
+import { Icon } from 'astro-icon/components';
+
 
 const imageURL = "bg.jpg"
 const bgStyle = {
@@ -15,10 +15,10 @@ const bgStyle = {
     </ul>
     <ul class="text-white flex justify-end gap-4">
       <li>
-        <a class="text-white block"><div class="w-6" set:html={instagramIcon} /></a>
+        <a class="text-white block cursor-pointer" href="https://www.instagram.com/dropstars_innsbruck"><Icon width={24} height={24} name="ion:logo-instagram" title="Instagram" /></a>
       </li>
       <li>
-        <a class="text-white block"><div class="w-6" set:html={facebookIcon} /></a>
+        <a class="text-white block cursor-pointer" href="https://www.facebook.com/dropstarsinnsbruck"><Icon width={24} height={24} name="ion:logo-facebook" title="Facebook"/></a>
       </li>
     </ul>
   </nav>

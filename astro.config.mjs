@@ -5,8 +5,10 @@ import tailwind from '@astrojs/tailwind';
 
 import sitemap from '@astrojs/sitemap';
 
+import icon from 'astro-icon';
+
 // https://astro.build/config
 export default defineConfig({
   site: 'https://dropstars.at',
-  integrations: [tailwind(), sitemap()],
+  integrations: [tailwind(), sitemap(), icon()],
 });
