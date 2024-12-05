@@ -18,9 +18,10 @@ const { title } = Astro.props;
 <link href="https://fonts.googleapis.com/css2?family=Anton&family=Hanken+Grotesk:wght@300;400&display=swap" rel="stylesheet">	<meta name="generator" content={Astro.generator} />
 		<title>{title}</title>
 		<script defer src="https://unpkg.com/tailwindcss-intersect@2.x.x/dist/observer.min.js"></script>
-
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+		<meta name="theme-color" content="#141414" />
 	</head>
-	<body class="flex-col flex min-h-screen">
+	<body class="flex-col flex min-h-screen bg-background">
 		<slot />
 	</body>
 </html>
