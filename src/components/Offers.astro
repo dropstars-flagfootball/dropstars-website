@@ -6,16 +6,19 @@ const offers = [
         imageURL:"shooting_1.jpg",
         offerText:"Was ist FlagFootball?",
         bgPositionTop: true,
+        link: '/was-ist-flagfootball',
     },
     {
         imageURL:"team.jpg",
         offerText:"Wer wir sind",
         bgPositionTop: false,
+        link: '/wer-wir-sind',
     },
     {
         imageURL:"shooting_5.jpg",
         offerText:"Kontakt",
         bgPositionTop: false,
+        link: '/kontakt',
     }
 ]
 ---
@@ -23,12 +26,12 @@ const offers = [
 
 <section class="py-12 text-center snap-center ">
     <div class="container mx-auto">
-<h1 class="text-white text-5xl italic uppercase"><DropstarsText text="What we offer" ></DropstarsText></h1>
+<h1 class="text-white text-5xl italic uppercase mb-8"><DropstarsText text="What we offer" ></DropstarsText></h1>
 <p class="text-white">We're committed to bringing you the best workout experience</p>
 <div class="grid grid-cols-1 md:grid-cols-3">
 {
     offers.map((offer)=>(
-        <ImageCard imageURL={offer.imageURL} text={offer.offerText} backgroundPositionTop={offer.bgPositionTop} />
+        <ImageCard imageURL={offer.imageURL} text={offer.offerText} backgroundPositionTop={offer.bgPositionTop} link={offer.link}/>
     ))
 }
 
