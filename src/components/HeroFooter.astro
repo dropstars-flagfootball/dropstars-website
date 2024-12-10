@@ -44,11 +44,11 @@ const content = [
   style={bgStyle}
 >
   <div class="mx-auto container">
-    { callToAction ? <h1
+    <h1
       class="text-5xl blueText uppercase italic py-28 md:py-36 w-full text-center"
     >
-      <DropstarsText text={callToAction} ></DropstarsText>
-    </h1> : null }
+    { callToAction ? <DropstarsText text={callToAction} ></DropstarsText> : null }
+    </h1> 
     <section class="grid grid-cols-1 md:grid-cols-3">
       {
         content.map((item) => (
