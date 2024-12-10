@@ -1,5 +1,6 @@
 ---
 import { SEO } from 'astro-seo';
+import { ViewTransitions } from 'astro:transitions';
 
 interface Props {
 	title?: string;
@@ -39,6 +40,7 @@ const { title = "Dropstars", seoTitle } = Astro.props;
 				}
 			}}
 		/>
+		<ViewTransitions />
 	</head>
 	<body class="flex-col flex min-h-screen bg-background">
 		<slot />

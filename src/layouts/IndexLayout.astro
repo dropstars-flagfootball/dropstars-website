@@ -11,7 +11,7 @@ const { title, footerCallToAction } = Astro.props;
 ---
 
 <Layout title={title}>
-	<main class="snap-y scroll-smooth">
+	<main class="snap-y scroll-smooth" transition:name="content" transition:animate="fade">
          <slot />
          <HeroFooter callToAction={footerCallToAction} />
 	</main>
