@@ -17,7 +17,7 @@ const { link, linkText, imageOne, imageTwo, title, text } = Astro.props;
 <section class="py-12 snap-center">
   <div class="container mx-auto grid grid-cols-1 md:grid-cols-2 p-4 gap-4">
     <div class="pb-8 md:pb-0 text-center md:text-left justify-center flex flex-col items-center md:items-start">
-      <h1 class="text-5xl italic max-w-xs text-white pb-8"><DropstarsText text={title}></DropstarsText></h1>
+      <h1 class="text-4xl md:text-5xl italic max-w-xs text-white pb-8"><DropstarsText text={title}></DropstarsText></h1>
       { text ? <p class="text-white max-w-sm pb-12">
        {text}
       </p> : null }

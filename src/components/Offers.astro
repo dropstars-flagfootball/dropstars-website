@@ -17,7 +17,7 @@ const { offers, title, text } = Astro.props;
 
 <section class="py-12 text-center snap-center ">
     <div class="container mx-auto">
-        { title ? <h1 class="text-white text-5xl italic uppercase mb-8"><DropstarsText text={title} ></DropstarsText></h1> : null }
+        { title ? <h1 class="text-white text-4xl md:text-5xl italic uppercase mb-8"><DropstarsText text={title} ></DropstarsText></h1> : null }
         { text ? <p class="text-white">{text}</p> : null }
         <div class="grid grid-cols-1 md:grid-cols-3">
         {
