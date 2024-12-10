@@ -1,6 +1,7 @@
 ---
 import { Image } from 'astro:assets';
 import DropstarsText from './DropstarsText.astro';
+import LinkButton from './LinkButton.astro';
 
 interface Props {
   title: string;
@@ -17,12 +18,12 @@ const { link, linkText, imageOne, imageTwo, title, text } = Astro.props;
   <div class="container mx-auto grid grid-cols-1 md:grid-cols-2 p-4 gap-4">
     <div>
       <h1 class="text-5xl italic max-w-xs text-white pb-8"><DropstarsText text={title}></DropstarsText></h1>
-      { text ? <p class="text-white max-w-sm">
+      { text ? <p class="text-white max-w-sm pb-8">
        {text}
       </p> : null }
-      { link && linkText ? <p class="text-white mt-8 underline">
-        <a href={link}>{linkText}</a>
-      </p> : null }
+      { link && linkText ? 
+        <LinkButton link={link} text={linkText} />
+      : null }
     </div>
     <div class="grid grid-cols-2 gap-6">
         <Image src={'/images/'+imageOne} 
