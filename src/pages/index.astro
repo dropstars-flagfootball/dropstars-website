@@ -5,15 +5,32 @@ import About from '../components/About.astro';
 import Offers from '../components/Offers.astro';
 import Testimonials from '../components/Testimonials.astro';
 import HeroFooter from '../components/HeroFooter.astro';
+import IndexLayout from '../layouts/IndexLayout.astro';
 ---
 
-<Layout title="Dropstars">
-	<main class="snap-y scroll-smooth">
-		<!-- Add Call To action, company Name and Button text2 -->
-	<Hero callToAction='Dropstars', buttonText='Kontakt' companyName='Dropstars'/>
-	<About linkText="/" imageOne='shooting_2.jpg', imageTwo='shooting_7.jpg' />
-	<Offers />
-	<HeroFooter callToAction='Jetzt kontaktieren' />
-	</main>
-</Layout>
+<IndexLayout title="Dropstars" footerCallToAction='Jetzt kontaktieren'>
+	<Hero title="Dropstars" instagramUrl="https://www.instagram.com/dropstars_innsbruck" facebookUrl='https://www.facebook.com/dropstarsinnsbruck'/>
+	<About linkText="Link Text" imageOne='shooting_2.jpg', imageTwo='shooting_7.jpg' link="/" title="FlagFootball made in Innsbruck" text="Lorem ipsum dolor sit amet" />
+	<Offers title="What we offer" text="Lorem ipsum" offers={[
+			{
+				imageURL:"shooting_1.jpg",
+				offerText:"Was ist FlagFootball?",
+				bgPositionTop: true,
+				link: '/was-ist-flagfootball',
+			},
+			{
+				imageURL:"team.jpg",
+				offerText:"Wer wir sind",
+				bgPositionTop: false,
+				link: '/wer-wir-sind',
+			},
+			{
+				imageURL:"shooting_5.jpg",
+				offerText:"Kontakt",
+				bgPositionTop: false,
+				link: '/kontakt',
+			}
+		]}
+	/>
+</IndexLayout>
 

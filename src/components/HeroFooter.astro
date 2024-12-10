@@ -2,7 +2,7 @@
 import DropstarsText from './DropstarsText.astro';
 
 interface Props {
-  callToAction: string;
+  callToAction?: string;
 }
 
 const { callToAction } = Astro.props;
@@ -44,11 +44,11 @@ const content = [
   style={bgStyle}
 >
   <div class="mx-auto container">
-    <h1
+    { callToAction ? <h1
       class="text-5xl blueText uppercase italic py-28 md:py-36 w-full text-center"
     >
       <DropstarsText text={callToAction} ></DropstarsText>
-    </h1>
+    </h1> : null }
     <section class="grid grid-cols-1 md:grid-cols-3">
       {
         content.map((item) => (
