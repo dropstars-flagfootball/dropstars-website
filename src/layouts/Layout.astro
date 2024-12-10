@@ -28,6 +28,16 @@ const { title = "Dropstars", seoTitle } = Astro.props;
 			description='Flag Football Team aus Innsbruck'
 			titleDefault='Dropstars'
 			titleTemplate="%s | Dropstars"
+			openGraph={{
+				basic: {
+					title: seoTitle ?? title,
+					type: "website",
+					image: "https://dropstars.at/images/logo.png"
+				},
+				optional: {
+					locale: "de_AT",
+				}
+			}}
 		/>
 	</head>
 	<body class="flex-col flex min-h-screen bg-background">
