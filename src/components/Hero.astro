@@ -16,20 +16,5 @@ const { title, instagramUrl, facebookUrl } = Astro.props;
 ---
 
 <header class="bg-cover bg-no-repeat bg-gray-400 bg-blend-multiply snap-start h-lvh" style={bgStyle}>
-  <nav class="text-white uppercase pt-8 p-4 font-bold2 container mx-auto top-0 z-10 grid grid-cols-2 ">
-    <ul>
-      <li><a href="#">{title}</a></li>
-    </ul>
-    <ul class="text-white flex justify-end gap-4">
-      <li>
-        <a class="text-white block cursor-pointer" href={instagramUrl}><Icon width={24} height={24} name="ion:logo-instagram" title="Instagram" /></a>
-      </li>
-      <li>
-        <a class="text-white block cursor-pointer" href={facebookUrl}><Icon width={24} height={24} name="ion:logo-facebook" title="Facebook"/></a>
-      </li>
-    </ul>
-  </nav>
-  <div class="px-4 mx-auto max-w-screen-xl h-full text-center py-24 text-white overflow-hidden">
-      <img src="/images/logo.png" alt="Dropstars Logo" class="w-48 mx-auto"/>
-  </div>
+ 
 </header>

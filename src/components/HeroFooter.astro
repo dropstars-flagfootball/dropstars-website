@@ -1,13 +1,13 @@
 ---
 import DropstarsText from './DropstarsText.astro';
 
+import { Icon } from 'astro-icon/components'
+
 interface Props {
   callToAction?: string;
 }
 
 const { callToAction } = Astro.props;
-const imageURL = "field.jpg";
-const bgStyle = { backgroundImage: `url('/images/${imageURL}')` };
 const content = [
   {
     heading: "E-Mail",
@@ -34,22 +34,19 @@ const content = [
     }, {
       text: "Facebook",
       link: 'https://www.facebook.com/dropstarsinnsbruck',
+    }, {
+      text: "Droppyshop",
+      link: 'https://droppyshop.myspreadshop.at/'
     }]
   },
 ];
 ---
 
 <footer
-  class="bg-cover bg-no-repeat bg-gray-700 bg-blend-multiply snap-end bg-bottom md:bg-[center_bottom_-10rem]"
-  style={bgStyle}
+  class="snap-end container bg-background/90 backdrop-blur-sm mx-auto mt-48 rounded-t-3xl"
 >
-  <div class="mx-auto container">
-    <h1
-      class="text-4xl md:text-5xl blueText uppercase italic py-28 md:py-36 w-full text-center"
-    >
-    { callToAction ? <DropstarsText text={callToAction} ></DropstarsText> : null }
-    </h1> 
-    <section class="grid grid-cols-1 md:grid-cols-3">
+  <div class="">
+    <section class="grid grid-cols-2 md:grid-cols-4">
       {
         content.map((item) => (
           <div class="p-12">
@@ -60,6 +57,7 @@ const content = [
           </div>
         ))
       }
+      <Icon name="logo_full" width="10rem" height="15rem" class="p-4 md:pl-4 pl-12"></Icon>
     </div>
   </div>
 </footer>

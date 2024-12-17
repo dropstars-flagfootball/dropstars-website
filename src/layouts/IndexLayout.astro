@@ -1,7 +1,7 @@
 ---
 import PageHero from '../components/PageHero.astro';
 import HeroFooter from '../components/HeroFooter.astro';
-import Layout from '../layouts/Layout.astro';
+import BaseLayout from '../layouts/BaseLayout.astro';
 interface Props {
 	title: string;
     footerCallToAction?: string;
@@ -10,9 +10,6 @@ interface Props {
 const { title, footerCallToAction } = Astro.props;
 ---
 
-<Layout title={title}>
-	<main class="snap-y scroll-smooth" transition:name="content" transition:animate="fade">
+<BaseLayout title={title}>
          <slot />
-         <HeroFooter callToAction={footerCallToAction} />
-	</main>
-</Layout>
+</BaseLayout>

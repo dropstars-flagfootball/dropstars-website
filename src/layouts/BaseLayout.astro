@@ -1,0 +1,30 @@
+---
+import HeroFooter from '../components/HeroFooter.astro';
+import Layout from '../layouts/Layout.astro';
+import { Icon } from 'astro-icon/components'
+
+
+const imageURL = "background.jpg"
+const bgStyle = {
+  backgroundImage: `url('/images/${imageURL}')`,
+};
+interface Props {
+	title: string;
+    seoTitle?: string;
+    footerCallToAction?: string;
+}
+
+const { title, footerCallToAction, seoTitle } = Astro.props;
+---
+
+<Layout title={title} seoTitle={seoTitle}>
+    <div class="snap-y scroll-smooth flex-1 bg-fixed bg-bottom bg-cover pt-10" transition:name="content" transition:animate="fade" style={bgStyle}>
+        <div class="relative"><div class="absolute flex content-center justify-center w-full ">
+            <Icon name="droppy" class="block mx-auto z-20 " width="auto" height="30rem"/>
+        </div></div>
+        <main class="container mx-auto grid mt-96 pt-32 px-12 pb-12 rounded-3xl bg-background/90 backdrop-blur-sm">
+            <slot />
+	    </main>
+        <HeroFooter />
+    </div>
+</Layout>

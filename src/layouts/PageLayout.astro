@@ -2,6 +2,9 @@
 import PageHero from '../components/PageHero.astro';
 import HeroFooter from '../components/HeroFooter.astro';
 import Layout from '../layouts/Layout.astro';
+import BaseLayout from './BaseLayout.astro';
+import DropstarsText from '../components/DropstarsText.astro';
+import { Icon } from 'astro-icon/components';
 interface Props {
 	title: string;
     frontmatter: {
@@ -12,12 +15,14 @@ interface Props {
 const { title, frontmatter } = Astro.props;
 ---
 
-<Layout title={title} seoTitle={frontmatter.title}>
-    <PageHero title={title ?? frontmatter.title}/>
-    <section class="flex-1" transition:name="content" transition:animate="fade">
+<BaseLayout title={title} seoTitle={frontmatter.title}>
+    <a href="/" class="sticky top-0 text-white uppercase pt-8 p-4 font-bold2 bigFont italic flex align-bottom group transition-all ">
+        <div class="md:border-0 border-2 border-white md:rounded-none rouded-full">
+            <Icon name="ion:chevron-back-outline" class="pt-1 group-hover:-translate-x-1 transition-all"></Icon><span class="md:block hidden">Home</span>
+        </div>
+    </a>
         <div class="container text-white mx-auto p-4 pt-16 pb-24 prose lg:prose-xl prose-headings:text-white prose-a:text-white prose-li:font-normal prose-strong:text-white prose-em:text-white">
-         <slot />
+            <h1 class="text-white text-4xl md:text-5xl italic uppercase text-center"><DropstarsText text={title ?? frontmatter.title}></DropstarsText></h1>
+            <slot />
         </div>  
-    </section>
-    <HeroFooter />
-</Layout>
+</BaseLayout>

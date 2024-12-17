@@ -2,37 +2,27 @@
 import { Image } from 'astro:assets';
 import DropstarsText from './DropstarsText.astro';
 import LinkButton from './LinkButton.astro';
+import { Icon } from 'astro-icon/components'
+import actionImage from '../images/action.jpg';
+import ShootingImage from '../images/shooting_2.jpg';
+
 
 interface Props {
-  title: string;
-  text?: string,
-  link?: string;
-  linkText?: string;
-  imageOne:string;
-  imageTwo:string;
+  text: string,
 }
-const { link, linkText, imageOne, imageTwo, title, text } = Astro.props;
+const { text } = Astro.props;
 ---
 
-<section class="py-12 snap-center">
-  <div class="container mx-auto grid grid-cols-1 md:grid-cols-2 p-4 gap-4">
-    <div class="pb-8 md:pb-0 text-center md:text-left justify-center flex flex-col items-center md:items-start">
-      <h1 class="text-4xl md:text-5xl italic max-w-xs text-white pb-8"><DropstarsText text={title}></DropstarsText></h1>
-      { text ? <p class="text-white max-w-sm pb-12">
-       {text}
-      </p> : null }
-      { link && linkText ? 
-        <LinkButton link={link} text={linkText} />
-      : null }
+  <section class="grid grid-cols-1 md:grid-cols-2 p-4 gap-4 md:pb-4 pb-16">
+    <div class="pb-8 md:pb-0 text-center md:text-left justify-center flex flex-col items-center md:items-start p-4">
+      <Icon name="logo_font" width="20rem" height="20rem"></Icon>
+      <p class="text-white max-w-sm pb-12">{text}</p>
     </div>
     <div class="grid grid-cols-2 gap-6">
-        <Image src={'/images/'+imageOne} 
-        width={600} 
-        height={600 * 0.8} 
+      <Image src={actionImage} 
         alt="" 
-        class="rounded-md object-cover w-64"/>
-    <Image src={'/images/'+imageTwo}
-         width={600} height={600} alt="" class="rounded-md object-cover w-64 pt-8"/>
+        class="rounded-3xl object-cover w-64 aspect-[2/3]"/>
+      <Image src={ShootingImage}
+         alt="" class="rounded-3xl object-cover w-64 aspect-[2/3]"/>
     </div>
-  </div>
 </section>
