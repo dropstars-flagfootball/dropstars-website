@@ -1,7 +1,7 @@
 
 ---
 import { Icon } from 'astro-icon/components';
-import DropstarsText from './DropstarsText.astro';
+import DropStarsText from './DropStarsText.astro';
 
 interface Props {
   title: string
@@ -17,7 +17,7 @@ const bgStyle = {
 <header class="bg-cover bg-no-repeat bg-gray-400 bg-blend-multiply snap-start h-96 flex flex-col flex-grow-0" style={bgStyle}>
     <nav class="text-white uppercase pt-8 p-4 font-bold2 container mx-auto top-0 z-10 grid grid-cols-2 flex-0">
       <ul>
-        <li><a href="/">Dropstars</a></li>
+        <li><a href="/">DropStars</a></li>
       </ul>
       <ul class="text-white flex justify-end gap-4">
         <li>
@@ -29,6 +29,6 @@ const bgStyle = {
       </ul>
     </nav>
     <div class=" px-4 flex-1 text-center flex-col flex justify-center text-white overflow-hidden ">
-      <h1 class="text-white text-4xl md:text-5xl align-middle" transition:name="page-title" transition:animate="fade"><DropstarsText text={title}></DropstarsText></h1>
+      <h1 class="text-white text-4xl md:text-5xl align-middle" transition:name="page-title" transition:animate="fade"><DropStarsText text={title}></DropStarsText></h1>
     </div>
   </header>

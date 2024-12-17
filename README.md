@@ -1,6 +1,6 @@
-# Dropstars Website
+# DropStars Website
 
-Website for the Dropstars Flag Football Team
+Website for the DropStars Flag Football Team
 
 Based on [Astro](https://docs.astro.build).
 

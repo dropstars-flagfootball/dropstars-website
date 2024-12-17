@@ -1,5 +1,5 @@
 ---
-import DropstarsText from "./DropstarsText.astro";
+import DropStarsText from "./DropStarsText.astro";
 import ImageCard from "./ImageCard.astro";
 interface Props {
   offers: {
@@ -16,7 +16,7 @@ const { offers, title, text } = Astro.props;
 
 
     <section class="">
-        { title ? <h1 class="text-white text-4xl md:text-5xl italic uppercase text-center"><DropstarsText text={title} ></DropstarsText></h1> : null }
+        { title ? <h1 class="text-white text-4xl md:text-5xl italic uppercase text-center"><DropStarsText text={title} ></DropStarsText></h1> : null }
         { text ? <p class="text-white text-center mt-8">{text}</p> : null }
         <div class="grid grid-cols-1 md:grid-cols-3">
         {

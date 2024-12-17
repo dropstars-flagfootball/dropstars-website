@@ -3,7 +3,7 @@ import PageHero from '../components/PageHero.astro';
 import HeroFooter from '../components/HeroFooter.astro';
 import Layout from '../layouts/Layout.astro';
 import BaseLayout from './BaseLayout.astro';
-import DropstarsText from '../components/DropstarsText.astro';
+import DropStarsText from '../components/DropStarsText.astro';
 import { Icon } from 'astro-icon/components';
 interface Props {
 	title: string;
@@ -22,7 +22,7 @@ const { title, frontmatter } = Astro.props;
         </div>
     </a>
         <div class="container text-white mx-auto p-4 pt-16 pb-24 prose lg:prose-xl prose-headings:text-white prose-a:text-white prose-li:font-normal prose-strong:text-white prose-em:text-white">
-            <h1 class="text-white text-4xl md:text-5xl italic uppercase text-center"><DropstarsText text={title ?? frontmatter.title}></DropstarsText></h1>
+            <h1 class="text-white text-4xl md:text-5xl italic uppercase text-center"><DropStarsText text={title ?? frontmatter.title}></DropStarsText></h1>
             <slot />
         </div>  
 </BaseLayout>

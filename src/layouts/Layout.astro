@@ -7,7 +7,7 @@ interface Props {
 	seoTitle?: string;
 }
 
-const { title = "Dropstars", seoTitle } = Astro.props;
+const { title = "DropStars", seoTitle } = Astro.props;
 ---
 
 <!doctype html>
@@ -27,8 +27,8 @@ const { title = "Dropstars", seoTitle } = Astro.props;
 		<SEO
 			title={seoTitle}
 			description='Flag Football Team aus Innsbruck'
-			titleDefault='Dropstars'
-			titleTemplate="%s | Dropstars"
+			titleDefault='DropStars'
+			titleTemplate="%s | DropStars"
 			openGraph={{
 				basic: {
 					title: seoTitle ?? title,
