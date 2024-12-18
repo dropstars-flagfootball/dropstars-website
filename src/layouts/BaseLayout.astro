@@ -2,12 +2,13 @@
 import HeroFooter from '../components/HeroFooter.astro';
 import Layout from '../layouts/Layout.astro';
 import { Icon } from 'astro-icon/components'
+import { getImage } from "astro:assets"
 
+import backgroundImage from "../images/background.jpg"
 
-const imageURL = "background.jpg"
-const bgStyle = {
-  backgroundImage: `url('/images/${imageURL}')`,
-};
+const optimizedBackgroundImage = await getImage({ src: backgroundImage })
+
+const bgStyle = `background-image: url('${optimizedBackgroundImage.src}')`
 interface Props {
 	title: string;
     seoTitle?: string;
