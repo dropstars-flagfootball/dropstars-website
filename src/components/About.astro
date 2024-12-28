@@ -7,8 +7,9 @@ import Instagram from './Instagram.astro';
 
 interface Props {
   text: string,
+  showInstagram?: boolean
 }
-const { text } = Astro.props;
+const { text, showInstagram } = Astro.props;
 ---
 
   <section class="grid grid-cols-1 lg:grid-cols-2 p-4 gap-4 md:pb-4 pb-24 mb-10 md:mb-20">
@@ -16,12 +17,12 @@ const { text } = Astro.props;
       <Icon name="logo_font" width="20rem" height="20rem" class="max-w-full"></Icon>
       <p class="text-white max-w-sm pb-12 prose">{text}</p>
     </div>
-    <Instagram pageName='dropstars_innsbruck' />
-    <!--<div class="grid grid-cols-2 md:grid-cols-1 lg:grid-cols-2 gap-6 content-center">
+    { showInstagram ? (<Instagram pageName='dropstars_innsbruck' />) : 
+    (<div class="grid grid-cols-2 md:grid-cols-1 lg:grid-cols-2 gap-6 content-center">
       <Image src={actionImage} 
         alt="" 
         class="rounded-3xl object-cover w-64 aspect-[2/3] max-w-full"/>
       <Image src={ShootingImage}
          alt="" class="rounded-3xl object-cover w-64 aspect-[2/3] max-w-full"/>
-    </div>-->
+    </div>)}
 </section>
