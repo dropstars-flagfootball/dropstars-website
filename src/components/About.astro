@@ -11,15 +11,15 @@ const { text } = Astro.props;
 ---
 
   <section class="grid grid-cols-1 md:grid-cols-2 p-4 gap-4 md:pb-4 pb-16">
-    <div class="pb-8 md:pb-0 text-center md:text-left justify-center flex flex-col items-center md:items-start p-4">
-      <Icon name="logo_font" width="20rem" height="20rem"></Icon>
-      <p class="text-white max-w-sm pb-12">{text}</p>
+    <div class="pb-8 md:pb-0 text-center justify-center flex flex-col items-center p-4">
+      <Icon name="logo_font" width="20rem" height="20rem" class="max-w-full"></Icon>
+      <p class="text-white max-w-sm pb-12 prose">{text}</p>
     </div>
-    <div class="grid grid-cols-2 gap-6">
+    <div class="grid grid-cols-2 md:grid-cols-1 lg:grid-cols-2 gap-6 content-center">
       <Image src={actionImage} 
         alt="" 
-        class="rounded-3xl object-cover w-64 aspect-[2/3]"/>
+        class="rounded-3xl object-cover w-64 aspect-[2/3] max-w-full"/>
       <Image src={ShootingImage}
-         alt="" class="rounded-3xl object-cover w-64 aspect-[2/3]"/>
+         alt="" class="rounded-3xl object-cover w-64 aspect-[2/3] max-w-full"/>
     </div>
 </section>
