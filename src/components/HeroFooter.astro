@@ -7,36 +7,41 @@ interface Props {
 
 const { callToAction } = Astro.props;
 const content = [
-  {
-    heading: "E-Mail",
-    data: [{
+  [{
+      type: 'heading',
+      text: 'E-Mail'
+    }, {
+      type: 'link',
       text: "info@dropstars.at",
       link: 'mailto:info@dropstars.at',
-    }]
-  },
-  {
-    heading: "Telefon",
-    data: [{
+    }, {
+      type: 'heading',
+      text: 'Telefon'
+    }, {
+      type: 'link',
       text: "+43 660 32 174 30",
       link: 'tel:+436603217430',
-    }]
-  },
-  {
-    heading: "Links",
-    data: [{
+    }],
+  [{
+      type: 'heading',
+      text: 'Links'
+    }, {
+      type: 'link',
       text: "Impressum",
       link: '/impressum',
     }, {
+      type: 'link',
       text: "Instagram",
       link: 'https://www.instagram.com/dropstars_innsbruck',
     }, {
+      type: 'link',
       text: "Facebook",
       link: 'https://www.facebook.com/dropstarsinnsbruck',
     }, {
+      type: 'link',
       text: "Droppyshop",
       link: 'https://droppyshop.myspreadshop.at/'
-    }]
-  },
+    }],
 ];
 ---
 
@@ -44,18 +49,31 @@ const content = [
   class="snap-end container bg-background/90 backdrop-blur-sm mx-auto mt-48 rounded-t-3xl"
 >
   <div class="">
-    <section class="grid grid-cols-2 md:grid-cols-4">
+    <section class="grid grid-cols-2 md:grid-cols-3">
       {
-        content.map((item) => (
-          <div class="p-12">
-            <h1 class="uppercase text-2xl italic text-white">{item.heading}</h1>
-            { item.data.map((element) => (
-              <a href={element.link}><p class="text-white">{element.text}</p></a>
-            ))}
+        content.map((section) => (
+          <div class="p-12 text-center">
+            {section.map((item) => {
+              if (item.type === 'heading') {
+                return <h1 class="footer-heading uppercase text-2xl italic text-white">{item.text}</h1>
+              } else if (item.type==='link') {
+                return <a class="footer-link" href={item.link}><p class="text-white">{item.text}</p></a>
+            } else {
+              return null
+            }})}
           </div>
         ))
       }
-      <Icon name="logo_full" width="10rem" height="15rem" class="p-4 md:pl-4 pl-12"></Icon>
+      <div class="p-4 col-span-2 md:col-span-1 flex justify-center content-center items-center" >
+      <Icon name="logo_full" width="10rem" height="15rem" class=""></Icon>
+    </div>
     </div>
   </div>
 </footer>
+
+
+<style>
+  .footer-link + .footer-heading {
+    margin-top: 1rem;
+  }
+</style>
