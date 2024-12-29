@@ -53,10 +53,10 @@ const content = [
   class="snap-end container bg-background/90 backdrop-blur-sm mx-auto mt-48 rounded-t-3xl pb-12 md:pb-4"
 >
   <div class="">
-    <section class="grid grid-cols-2 md:grid-cols-3">
+    <section class="grid grid-cols-1 md:grid-cols-3">
       {
         content.map((section) => (
-          <div class="p-12 text-center">
+          <div class="px-12 py-2 md:py-12 text-center">
             {section.map((item) => {
               if (item.type === 'heading') {
                 return <h1 class="footer-heading uppercase text-2xl italic text-white">{item.text}</h1>
@@ -68,7 +68,7 @@ const content = [
           </div>
         ))
       }
-      <div class="p-4 col-span-2 md:col-span-1 flex justify-center content-center items-center" >
+      <div class="p-4 col-span-1 flex justify-center content-center items-center" >
       <Icon name="logo_full" width="10rem" height="15rem" class="max-h-28 md:max-h-48 w-auto aspect-[3/2]"></Icon>
     </div>
     </div>
