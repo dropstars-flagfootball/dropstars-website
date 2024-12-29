@@ -6,5 +6,9 @@ const { pageName } = Astro.props;
 
 ---
 
-<script async src="https://www.instagram.com/embed.js"></script>
-<blockquote class="instagram-media" data-instgrm-permalink={`https://www.instagram.com/${pageName}/`} data-instgrm-version="14" style="background:transparent; border:0; border-radius:3px; box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15); margin: 1px; max-width:658px; min-width:326px; padding:0; width:99.375%;width:-webkit-calc(100% - 2px); width:calc(100% - 2px);"></blockquote>
+<!--<script async src="https://www.instagram.com/embed.js"></script>
+<blockquote class="instagram-media" data-instgrm-permalink={`https://www.instagram.com/${pageName}/?maxwidth=200`} data-instgrm-version="14" style="background:transparent; border:0; border-radius:3px; box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15); margin: 1px; max-width:100%; min-width:300px; padding:0; width:99.375%;width:-webkit-calc(100% - 2px); width:calc(100% - 2px);"></blockquote>
+
+-->
+
+<iframe src={`https://www.instagram.com/${pageName}/embed`} width="100%" height="auto" frameborder="0" scrolling="no" allowtransparency="true" class="bg-transparent max-w-full aspect-[310/398] md:aspect-[568/601] rounded-xl overflow-hidden"></iframe>
